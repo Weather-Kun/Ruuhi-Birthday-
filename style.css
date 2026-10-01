@@ -1,0 +1,58 @@
+*{box-sizing:border-box}
+html,body{width:100%;max-width:100%;margin:0;overflow-x:hidden}
+body{background:#100b13;color:#ffeaf4;font-family:Georgia,"Times New Roman",serif}
+button{font:inherit}
+.screen{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 20px;position:relative;overflow:hidden;animation:pageFade .8s ease}
+#welcomeScreen{display:flex}
+.eyebrow{font-family:Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#d9a7bd;margin:10px 0 20px}
+h1,h2,h3,p{position:relative;z-index:2}
+h1{font-size:58px;line-height:.98;margin:8px 0 24px;font-weight:500;text-shadow:0 0 18px rgba(255,183,216,.18),0 0 40px rgba(180,70,140,.12)}
+h1 span{color:#ffb7d8;animation:welcomeGlow 3s ease-in-out infinite}
+h2{font-size:44px;font-weight:500;margin:8px 0 6px}
+h3{font-size:30px;font-weight:400;color:#ffb7d8;margin:6px 0 18px}
+.message,.birthday-message,.memories-intro,.final-message,.final-love{max-width:560px;line-height:1.8;color:#e9cbd9;font-size:16px}
+.from{font-size:14px;color:#c99caf;margin-top:22px}
+.small-heart{font-size:34px;color:#ffb7d8;animation:heartPulse 2.5s ease-in-out infinite}
+.flower,.dandelion,.letter-flower,.ending-flower{font-size:58px;filter:drop-shadow(0 0 12px rgba(255,220,130,.25));animation:gentleFloat 4s ease-in-out infinite}
+.divider,.final-divider{color:#e7a8c3;margin:12px 0 20px;letter-spacing:7px}
+.date{font:11px Arial,sans-serif;letter-spacing:2px;color:#a98598}
+button{border:1px solid rgba(255,183,216,.28);background:rgba(255,183,216,.09);color:#ffeaf4;padding:14px 24px;border-radius:999px;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;margin-top:25px}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,150,210,.25),0 0 18px rgba(255,183,216,.15)}
+button:active{transform:scale(.97)}
+.story,.memories,.letter,.final{justify-content:flex-start;padding-top:70px}
+.story-card,.memory-card,.letter-card,.memory-note{width:100%;max-width:620px;background:rgba(255,255,255,.035);border:1px solid rgba(255,183,216,.13);border-radius:25px;padding:28px;margin:16px 0;box-shadow:0 20px 55px rgba(0,0,0,.35)}
+.story-card p,.letter-card p,.memory-card p{line-height:1.85;color:#e8cbd8}
+.story-icon{font-size:25px;color:#ffb7d8;text-shadow:0 0 14px rgba(255,183,216,.25)}
+.story-photo,.letter-photo,.final-photo,.birthday-photo{width:100%;max-width:320px;margin:20px auto;padding:7px;border-radius:24px;background:rgba(255,183,216,.05);border:1px solid rgba(255,183,216,.17);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 28px rgba(255,150,210,.11)}
+.story-photo img,.letter-photo img,.final-photo img,.birthday-photo img{width:100%;display:block;border-radius:18px}
+.memory-card{padding:10px;max-width:520px}
+.memory-card img{width:100%;display:block;border-radius:18px}
+.memory-card p{padding:0 10px 8px;margin:12px 0 4px;font-size:15px}
+.memory-note{text-align:center}
+.note-heart{font-size:30px;color:#ffb7d8}
+.memory-note p{line-height:1.8;color:#e8cbd8}
+.memory-note span{font-size:13px;color:#c99caf}
+.memory-ending{max-width:560px;text-align:center;margin:30px 0}
+.memory-ending h3{font-size:26px}
+.memory-ending p{line-height:1.8;color:#e8cbd8}
+.memory-ending span{color:#d5a5ba}
+.letter-card{text-align:left;max-width:680px;padding:34px}
+.letter-card p:first-child{color:#ffb7d8;font-size:21px}
+.letter-signature,.final-signature{color:#ffb7d8;text-align:right;margin-top:22px}
+.final-love{color:#f2d7e4}
+.hidden-wish{display:none;white-space:pre-line;max-width:380px;margin:25px auto 0;color:#ffeaf4;font-size:17px;line-height:1.9;text-shadow:0 0 18px rgba(255,183,216,.25)}
+.made-with-love{margin-top:12px;font-size:13px;letter-spacing:1.5px;color:rgba(255,183,216,.65);opacity:.85;text-shadow:0 0 12px rgba(255,183,216,.18)}
+.floating-hearts,.floating-petals{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.floating-hearts{z-index:999}.floating-petals{z-index:998}
+.floating-hearts span,.floating-petals span{position:absolute;bottom:-30px}
+.floating-hearts span{color:rgba(255,183,216,.38);font-size:20px;animation:floatHeart 10s linear infinite}
+.floating-hearts span:nth-child(1){left:10%}.floating-hearts span:nth-child(2){left:28%;animation-delay:2s;font-size:15px}.floating-hearts span:nth-child(3){left:45%;animation-delay:4s;font-size:25px}.floating-hearts span:nth-child(4){left:62%;animation-delay:1s;font-size:18px}.floating-hearts span:nth-child(5){left:78%;animation-delay:5s;font-size:28px}.floating-hearts span:nth-child(6){left:90%;animation-delay:3s;font-size:16px}
+.floating-petals span{color:rgba(255,220,150,.4);font-size:14px;animation:floatPetal 12s linear infinite}
+.floating-petals span:nth-child(1){left:18%;animation-delay:1s}.floating-petals span:nth-child(2){left:40%;animation-delay:5s}.floating-petals span:nth-child(3){left:68%;animation-delay:2s}.floating-petals span:nth-child(4){left:85%;animation-delay:7s}
+@keyframes pageFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heartPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.18);opacity:1;text-shadow:0 0 18px rgba(255,183,216,.55)}}
+@keyframes welcomeGlow{0%,100%{text-shadow:0 0 8px rgba(255,183,216,.15)}50%{text-shadow:0 0 22px rgba(255,183,216,.45)}}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes floatHeart{0%{transform:translateY(0) scale(.8);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(-110vh) scale(1.2);opacity:0}}
+@keyframes floatPetal{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.8}85%{opacity:.8}100%{transform:translateY(-110vh) rotate(180deg);opacity:0}}
+@media(max-width:380px){h1{font-size:42px}h2{font-size:34px}.letter-card{padding:25px 20px}.letter-card p{font-size:15px}button{width:100%;max-width:300px;line-height:1.4}.screen{padding-left:16px;padding-right:16px}.final{padding-left:18px;padding-right:18px}.final-message{font-size:15px}.final-love{font-size:16px}.hidden-wish{font-size:15px}}
